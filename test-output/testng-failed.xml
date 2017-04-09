@@ -5,8 +5,11 @@
     <classes>
       <class name="com.interview.mobilebanking.CommonTest">
         <methods>
-          <include name="falseLoginTest"/>
           <include name="setUp"/>
+          <include name="accountSummary_Test"/>
+          <include name="logout"/>
+          <include name="listOfAddedBenefiaries_Test"/>
+          <include name="closeDriver"/>
         </methods>
       </class> <!-- com.interview.mobilebanking.CommonTest -->
     </classes>

@@ -1,11 +1,9 @@
 package com.interview.mobilebanking.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.asserts.SoftAssert;
 
 public class AccountSummaryPage extends BasePage{
 
@@ -22,14 +20,33 @@ public class AccountSummaryPage extends BasePage{
 	@FindBy(xpath=AccountSummaryInfo)
 	private WebElement accountSummaryInfo;
 	
+
 	
 	
-	public List<String> getAccountSummaryInfo(){
-		//String accountinfo = driver.findElement(By.tagName("content-desc")).getText();
-		String accountinfo1 = driver.findElement(By.tagName("name")).getText();
-		System.out.println(driver.getPageSource());;
-		//System.out.println(accountinfo);
-		return null;
+	
+	public void verifyAccountSummaryInfo(String accountName, String accountBalance, String accountNo, String accountBranch){
+
+		/*softAssert.assertEquals(driver.getPageSource().toLowerCase(), accountName.toLowerCase());
+		softAssert.assertEquals(driver.getPageSource().toLowerCase(), accountBalance.toLowerCase());
+		softAssert.assertEquals(driver.getPageSource().toLowerCase(), accountNo.toLowerCase());
+		softAssert.assertEquals(driver.getPageSource().toLowerCase(), accountBranch.toLowerCase());*/
+		
+		if (!driver.getPageSource().toLowerCase().contains(accountName.toLowerCase())){
+			System.out.println("Account name is incorrect");
+		}
+		
+		if (!driver.getPageSource().toLowerCase().contains(accountBalance.toLowerCase())){
+			System.out.println("Account Balancec is incorrect");
+		}
+		
+		if (!driver.getPageSource().toLowerCase().contains(accountNo.toLowerCase())){
+			System.out.println("Account No is incorrect");
+		}
+		
+		if (!driver.getPageSource().toLowerCase().contains(accountBranch.toLowerCase())){
+			System.out.println("Bank Branch is incorrect");
+		}
+		
 	}
 
 }

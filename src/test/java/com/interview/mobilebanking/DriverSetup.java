@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.interview.mobilebanking.libraries.CommonLibrary;
 
@@ -17,8 +18,9 @@ public class DriverSetup extends CommonLibrary{
     protected WebDriverWait wait;
     private int implicitWaitSeconds = 30;
     private int explicitWaitSeconds = 30;
+    protected SoftAssert softAssert = null;
 
-    protected void prepareAndroidForAppium() throws MalformedURLException {
+    protected void setupEnvironment() throws MalformedURLException {
         
     	DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
@@ -32,5 +34,6 @@ public class DriverSetup extends CommonLibrary{
         
         driver.manage().timeouts().implicitlyWait(implicitWaitSeconds, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, explicitWaitSeconds);
+        softAssert = new SoftAssert();
     }
 }

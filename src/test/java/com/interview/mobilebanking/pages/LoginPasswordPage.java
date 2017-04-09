@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPasswordPage extends BasePage{
 
@@ -33,9 +34,22 @@ public class LoginPasswordPage extends BasePage{
 		confirmSecureAccess.click();
 	}
 	
-	public AccountHomePage login(){
+	public AccountHomePage successfulLogin(){
 		login_Btn.click();
-		return PageFactory.initElements(driver, AccountHomePage.class);
+		if (wait.until(ExpectedConditions.alertIsPresent()) == null){
+			return PageFactory.initElements(driver, AccountHomePage.class);
+		}
+		alert.dismiss();
+		return null;
+		
+	}
+	
+	public LoginPasswordPage failLogin(){
+		login_Btn.click();
+		if (wait.until(ExpectedConditions.alertIsPresent()) != null){
+			alert.dismiss();
+		}
+		return this;
 	}
 
 }

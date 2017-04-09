@@ -1,10 +1,13 @@
 package com.interview.mobilebanking.pages;
 
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 
 public class BasePage {
@@ -12,6 +15,10 @@ public class BasePage {
 	public static final String Logout_Btn="//android.view.View[@index='1']";
 	public static final String MyMenu_Btn="mymenuI";
 	public static final String FundsTrasfer_Btn="rrftr01I";
+	public SoftAssert softAssert;
+	public Alert alert;
+	public WebDriverWait wait;
+	private int explicitWaitSeconds = 30;
 	
 	protected WebDriver driver;	
 	
@@ -26,6 +33,8 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        softAssert = new SoftAssert();
+        wait = new WebDriverWait(driver, explicitWaitSeconds);
     }
     
     

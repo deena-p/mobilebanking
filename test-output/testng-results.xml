@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="104642" started-at="2017-04-09T10:43:07Z" finished-at="2017-04-09T10:44:51Z">
+  <suite name="Default suite" duration-ms="95952" started-at="2017-04-09T14:58:45Z" finished-at="2017-04-09T15:00:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="104642" started-at="2017-04-09T10:43:07Z" finished-at="2017-04-09T10:44:51Z">
+    <test name="Default test" duration-ms="95952" started-at="2017-04-09T14:58:45Z" finished-at="2017-04-09T15:00:21Z">
       <class name="com.interview.mobilebanking.CommonTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.interview.mobilebanking.CommonTest@384ad17b]" name="setUp" is-config="true" duration-ms="32075" started-at="2017-04-09T16:13:07Z" finished-at="2017-04-09T16:13:39Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.interview.mobilebanking.CommonTest@3c0f93f1]" name="setUp" is-config="true" duration-ms="33709" started-at="2017-04-09T20:28:45Z" finished-at="2017-04-09T20:29:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="accountSummary_Test()[pri:0, instance:com.interview.mobilebanking.CommonTest@384ad17b]" name="accountSummary_Test" duration-ms="65858" started-at="2017-04-09T16:13:39Z" finished-at="2017-04-09T16:14:45Z">
+        <test-method status="PASS" signature="login_Test()[pri:0, instance:com.interview.mobilebanking.CommonTest@3c0f93f1]" name="login_Test" duration-ms="55751" started-at="2017-04-09T20:29:19Z" finished-at="2017-04-09T20:30:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accountSummary_Test -->
-        <test-method status="PASS" signature="logout()[pri:0, instance:com.interview.mobilebanking.CommonTest@384ad17b]" name="logout" is-config="true" duration-ms="0" started-at="2017-04-09T16:14:45Z" finished-at="2017-04-09T16:14:45Z">
+        </test-method> <!-- login_Test -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:com.interview.mobilebanking.CommonTest@3c0f93f1]" name="logout" is-config="true" duration-ms="0" started-at="2017-04-09T20:30:14Z" finished-at="2017-04-09T20:30:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.interview.mobilebanking.CommonTest@384ad17b]" name="closeDriver" is-config="true" duration-ms="6695" started-at="2017-04-09T16:14:45Z" finished-at="2017-04-09T16:14:51Z">
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.interview.mobilebanking.CommonTest@3c0f93f1]" name="closeDriver" is-config="true" duration-ms="6477" started-at="2017-04-09T20:30:14Z" finished-at="2017-04-09T20:30:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->

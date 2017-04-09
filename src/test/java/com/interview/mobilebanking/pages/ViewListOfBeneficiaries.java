@@ -81,10 +81,14 @@ public class ViewListOfBeneficiaries extends BasePage{
 		}
 	}
 	
-	public Map<String,List<String>> getBeneficiariesDetails(){
-		String allInfo = allInfo_Frame.getText();
-		System.out.println(allInfo);
-		return null;
+	public void checkAddedBeneficiariesList(List<String> beneficiaries){
+		
+		for (String beneficiary:beneficiaries){
+			//softAssert.assertEquals(driver.getPageSource().toLowerCase(), beneficiary.toLowerCase());
+			if (!driver.getPageSource().toLowerCase().contains(beneficiary.toLowerCase())){
+				System.out.println(beneficiary + " account is not available");
+			}
+		}
 	}
 	
 	public void clickView(){
