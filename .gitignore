@@ -1,1 +1,7 @@
 /target/
+*.log
+*.MF
+.classpath
+.project
+.settings/
+test-output/
