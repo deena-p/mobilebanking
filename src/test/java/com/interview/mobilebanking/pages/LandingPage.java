@@ -5,20 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LandingPage extends BasePage{
+import objectrepository.AndroidORContants;
 
-	public static final String CustomerID_Lnk = "//android.view.View[@bounds='[360,226][698,298]']";
+public class LandingPage extends BasePage{
 	
-	@FindBy(xpath=CustomerID_Lnk)
+	@FindBy(xpath=AndroidORContants.CustomerID_Lnk)
 	private WebElement customerID_Link;
 	
 	public LandingPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public LoginCustomerIDPage clickCustomerIDTab(){
+	public LoginMethodPage clickCustomerIDTab(){
 		customerID_Link.click();
-		return PageFactory.initElements(driver, LoginCustomerIDPage.class);
+		return PageFactory.initElements(driver, LoginMethodPage.class);
 	}
 
 }

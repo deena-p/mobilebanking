@@ -1,49 +1,10 @@
 package com.interview.mobilebanking.libraries;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-
-import com.interview.mobilebanking.pages.AccountHomePage;
-import com.interview.mobilebanking.pages.BasePage;
-import com.interview.mobilebanking.pages.LandingPage;
-import com.interview.mobilebanking.pages.LoginCustomerIDPage;
-import com.interview.mobilebanking.pages.LoginPasswordPage;
+import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.AppiumDriver;
 
 public class CommonLibrary {
-	private static LandingPage landingPage = null;
-	private static LoginCustomerIDPage loginCustomerIDPage = null;
-	private static LoginPasswordPage loginPasswordPage = null;
-	private static AccountHomePage accountHomePage = null;
-	
-	public static BasePage loginToApp(WebDriver driver, String userName, String password){
-		try {
-			landingPage = PageFactory.initElements(driver, LandingPage.class);
-			loginCustomerIDPage = landingPage.clickCustomerIDTab();
-			loginCustomerIDPage.enterCustomerID(userName);
-			loginPasswordPage = loginCustomerIDPage.clickContinue();
-			loginPasswordPage.enterPassword(password);
-			loginPasswordPage.confirmSecureAccess();
-			
-			accountHomePage = loginPasswordPage.successfulLogin();
-			if (accountHomePage != null){
-				return accountHomePage;
-			}
-			
-			loginPasswordPage = loginPasswordPage.failLogin();
-			if (loginPasswordPage != null){
-				return loginPasswordPage;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	
-	
-
 
 	public static void scrollUpAppScreen(AppiumDriver<?> driver) {
 		try {
@@ -73,6 +34,11 @@ public class CommonLibrary {
 
 	public static int getScreenHeight(AppiumDriver<?> driver) {
 		return driver.manage().window().getSize().getHeight();
+	}
+	
+	public boolean isAlertPresent(WebElement element){
+		//Alert
+		return false;
 	}
 
 }

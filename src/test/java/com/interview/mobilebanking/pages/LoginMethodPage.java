@@ -5,24 +5,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginCustomerIDPage extends BasePage {
+import objectrepository.AndroidORContants;
 
-	public static final String Continue_Btn="//android.widget.Button[@content-desc='Continue']";
-	public static final String CustomerID_Input="fldLoginUserId";
+public class LoginMethodPage extends BasePage {
 	
-	public LoginCustomerIDPage(WebDriver driver) {
+	public LoginMethodPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id=CustomerID_Input)
+	@FindBy(id=AndroidORContants.CustomerID_Input)
 	private WebElement customerID_Input;
 	
-	@FindBy(xpath=Continue_Btn)
+	@FindBy(xpath=AndroidORContants.Continue_Btn)
 	private WebElement continue_Btn;
 	
-	public void enterCustomerID(String customerID){
+	public LoginMethodPage enterCustomerID(String customerID){
 		customerID_Input.sendKeys(customerID);
+		return this;
 	}
 	
 	public LoginPasswordPage clickContinue(){

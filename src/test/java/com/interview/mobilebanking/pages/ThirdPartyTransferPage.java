@@ -5,12 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ThirdPartyTransferPage extends BasePage {
+import objectrepository.AndroidORContants;
 
-	public static final String ViewListOfBeneficiaries_Btn = "//android.view.View[@index='18']";
-	//view List of Beneficiaries - android.view.View - View List of Beneficiaries - index 18
+public class ThirdPartyTransferPage extends BasePage {
 	
-	@FindBy(xpath=ViewListOfBeneficiaries_Btn)
+	@FindBy(xpath=AndroidORContants.ViewListOfBeneficiaries_Btn)
 	private WebElement viewListOfBeneficiaries_Btn;
 	
 	public ThirdPartyTransferPage(WebDriver driver) {

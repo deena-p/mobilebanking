@@ -3,51 +3,76 @@ package com.interview.mobilebanking.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import objectrepository.AndroidORContants;
 
 public class LoginPasswordPage extends BasePage{
 
-	public static final String Password_Input="upass";
-	public static final String ConfirmSecureAccess="chkLogin";
-	public static final String Login_Btn="//android.widget.Button[@content-desc='Login']";
-	
+
 	public LoginPasswordPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(id=Password_Input)
+
+	@FindBy(id=AndroidORContants.Password_Input)
 	private WebElement password_Input;
-	
-	@FindBy(id=ConfirmSecureAccess)
+
+	@FindBy(id=AndroidORContants.ConfirmSecureAccess)
 	private WebElement confirmSecureAccess;
-	
-	@FindBy(xpath=Login_Btn)
+
+	@FindBy(xpath=AndroidORContants.Login_Btn)
 	private WebElement login_Btn;
-	
-	
-	public void enterPassword (String password){
+
+	@FindBy(id=AndroidORContants.Alert_Title)
+	private WebElement alertTitle;
+
+	@FindBy(id=AndroidORContants.AlertOK_Button)
+	private WebElement alertOK_Button;
+
+	@FindBy(id=AndroidORContants.Alert_Message)
+	private WebElement alert_Message;
+
+	public LoginPasswordPage enterPassword (String password){
 		password_Input.sendKeys(password);
+		return this;
 	}
-	
-	public void confirmSecureAccess(){
+
+	public LoginPasswordPage confirmSecureAccess(){
 		confirmSecureAccess.click();
+		return this;
 	}
-	
-	public AccountHomePage successfulLogin(){
+
+	private void clickLoginButton(){
 		login_Btn.click();
-		if (wait.until(ExpectedConditions.alertIsPresent()) == null){
-			return PageFactory.initElements(driver, AccountHomePage.class);
+	}
+
+	private void clickAlertOKButton(){
+		try {
+			if (alertOK_Button != null){
+				alertOK_Button.click();;
+			}
+		} catch (Exception e) {
+			//
 		}
-		alert.dismiss();
-		return null;
-		
 	}
-	
+
+	public AccountHomePage successfulLogin(){
+		try {
+			clickLoginButton();
+			clickAlertOKButton();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
 	public LoginPasswordPage failLogin(){
-		login_Btn.click();
-		if (wait.until(ExpectedConditions.alertIsPresent()) != null){
-			alert.dismiss();
+		try {
+			clickLoginButton();
+			clickAlertOKButton();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return this;
 	}
