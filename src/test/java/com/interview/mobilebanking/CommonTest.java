@@ -19,7 +19,7 @@ import com.interview.mobilebanking.pages.common.AppHeader;
 public class CommonTest extends BaseTest{
 
 	private String customerID = "21820290";
-	private String password = "Milkyearth)9*";
+	private String password = "sdfsdfsdfsd";
 	private AccountSummaryPage accountSummaryPage = null;
 	private AccountHomePage accountHomePage = null;
 	
