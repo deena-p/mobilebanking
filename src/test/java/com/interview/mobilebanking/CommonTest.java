@@ -19,7 +19,7 @@ import com.interview.mobilebanking.pages.common.AppHeader;
 public class CommonTest extends BaseTest{
 
 	private String customerID = "21820290";
-	private String password = "sdfsdfsdfsd";
+	private String password = "tsdfsd443534t";
 	private AccountSummaryPage accountSummaryPage = null;
 	private AccountHomePage accountHomePage = null;
 	
@@ -31,7 +31,7 @@ public class CommonTest extends BaseTest{
 	private String accountName = "DEENATHAYALAN P";
 	private String accountBalance = "11,090.62";
 	private String branch = "MYLAPORE";
-	private String befeficiaries[] = {"Ajitha","Edwin","vindi"};
+	private String befeficiaries[] = {"fdgdfgdf","Edwin","vindi"};
 
 
 	@BeforeClass
@@ -70,13 +70,13 @@ public class CommonTest extends BaseTest{
 
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void invalidLogin_Test() {
 		try {
 			loginMethodPage = landingPage.clickCustomerIDTab();
 			loginPasswordPage = loginMethodPage.enterCustomerID(customerID)
 					.clickContinue();
-			loginPasswordPage.enterPassword(password)
+			loginPasswordPage.enterPassword("invalidpassword")
 			.confirmSecureAccess()
 			.failLogin();
 
@@ -86,7 +86,7 @@ public class CommonTest extends BaseTest{
 
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true,priority = 1)
 	public void accountSummary_Test(){
 		try {
 			loginMethodPage = landingPage.clickCustomerIDTab();
@@ -102,7 +102,7 @@ public class CommonTest extends BaseTest{
 		}
 	}
 
-	@Test(enabled=false)
+	@Test(enabled=true,priority = 2)
 	public void listOfAddedBenefiaries_Test(){
 		try {
 			loginMethodPage = landingPage.clickCustomerIDTab();

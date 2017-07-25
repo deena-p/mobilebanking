@@ -3,6 +3,7 @@ package com.interview.mobilebanking.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import objectrepository.AndroidORContants;
@@ -49,7 +50,8 @@ public class LoginPasswordPage extends BasePage{
 	private void clickAlertOKButton(){
 		try {
 			if (alertOK_Button != null){
-				alertOK_Button.click();;
+				alertOK_Button.click();
+				softAssert.fail("Previous sessions is not closed correctly!");
 			}
 		} catch (Exception e) {
 			//
@@ -64,7 +66,7 @@ public class LoginPasswordPage extends BasePage{
 			e.printStackTrace();
 		}
 
-		return null;
+		return PageFactory.initElements(driver,AccountHomePage.class);
 	}
 
 	public LoginPasswordPage failLogin(){

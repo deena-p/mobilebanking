@@ -6,6 +6,7 @@ public class AndroidORContants {
 	public static final String Logout_Btn="//android.view.View[@bounds='[618,0][720,92]']";
 	public static final String MyMenu_Btn="mymenuI";
 	public static final String FundsTrasfer_Btn="rrftr01I";
+	public static final	String OK_Btn="//android.widget.Button[@text='OK']";
 	
 	//Landing Page
 	public static final String CustomerID_Lnk = "//android.view.View[@bounds='[360,226][698,298]']";

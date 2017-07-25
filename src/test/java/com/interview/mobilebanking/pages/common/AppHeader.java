@@ -18,11 +18,25 @@ public class AppHeader extends BasePage{
 
 	@FindBy(xpath=AndroidORContants.Logout_Btn)
 	private WebElement logout_Btn;
+
+	@FindBy(xpath=AndroidORContants.OK_Btn)
+	private WebElement alert_OK_Btn;
 	
 	public LoginMethodPage logout(){
 		if (logout_Btn != null){
 			logout_Btn.click();
+			if (alert_OK_Btn!=null){
+				while(true){
+					try{
+						alert_OK_Btn.click();
+						break;
+					}catch(Exception e){
+						continue;
+					}
+				}
+			}
 		}
+
 		return PageFactory.initElements(driver, LoginMethodPage.class);
 	}
 
